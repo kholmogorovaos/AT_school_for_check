@@ -1,15 +1,15 @@
 abstract public class NatureElement {
-    abstract boolean connect(NatureElement elem);
+    abstract NatureElement connect(NatureElement elem);
 
     static NatureElement create(String name) {
-        switch (name) {
-            case "Fire":
+        switch (name.toLowerCase()) {
+            case "fire":
                 return new Fire();
-            case "Air":
+            case "air":
                 return new Air();
-            case "Earth":
+            case "earth":
                 return new Earth();
-            case "Water":
+            case "water":
                 return new Water();
             default:
                 return null;

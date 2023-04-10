@@ -1,18 +1,19 @@
 public class Earth extends NatureElement {
-    boolean connect(NatureElement elem) {
+    @Override
+    NatureElement connect(NatureElement elem) {
         if (elem instanceof Air) {
-            System.out.println("Earth + Air = Dust");
-            return true;
+            System.out.println("Earth + Air = " + new Dust());
+            return new Dust();
         } else if (elem instanceof Earth) {
-            System.out.println("Earth + Earth = Pressure");
-            return true;
+            System.out.println("Earth + Earth = " + new Pressure());
+            return new Pressure();
         } else if (elem instanceof Water) {
-            System.out.println("Earth + Water = Mud");
-            return true;
+            System.out.println("Earth + Water = " + new Mud());
+            return new Mud();
         } else if (elem instanceof Fire) {
-            System.out.println("Earth + Fire = Lava");
-            return true;
+            System.out.println("Earth + Fire = " + new Lava());
+            return new Lava();
         }
-        return false;
+        return null;
     }
 }
